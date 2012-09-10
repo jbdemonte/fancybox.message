@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<title>FancyBox 1.3.4 | Message 1.0 | Demonstration</title>
+	<script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<script type="text/javascript" src="../../fancybox.message/fancybox.message.js"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../../fancybox.message/fancybox.message.css" media="screen" />
+ 	<link rel="stylesheet" href="../style.css" />
+	<script type="text/javascript">
+    $(function(){
+      var $bsod = $(".bsod").detach();
+    
+      $("#confirm").click(function(){
+        $.fancybox.message.confirm("Are your really sure ?");
+      });
+      $("#alert").click(function(){
+        $.fancybox.message.alert("Warniiiiiiiiing !");
+      });
+      $("#info").click(function(){
+        $.fancybox.message.info("this is an info box !");
+      });
+      $("#error").click(function(){
+        $.fancybox.message.error("Outch !");
+      });
+      $("#buttons").click(function(){
+        $.fancybox.message.confirm({
+          content:"this is a custom confirm box !",
+          buttons:{yes: "Yes, please", no: "No, thanks you", cancel: "I'm not sure...", maybe: "Maybe :)", whatYouWant:$("<button>").html("test")},
+          classes: "long_name",
+          onYes: function(){
+            $("#console").append("<p>onYes</p>");
+          },
+          onNo: function(){
+            $("#console").append("<p>onYes</p>");
+          },
+          onCancel: function(){
+            $("#console").append("<p>onCancel</p>");
+          },
+          onMaybe: function(){
+            $("#console").append("<p>onMaybe</p>");
+          },
+          onWhatYouWant: function(){
+            $("#console").append("<p>onWhatYouWant</p>");
+          }
+        });
+      });
+      
+      $("#custom").click(function(){
+        $.fancybox.message({
+          classes: "custom",
+          title: "CODE WAR",
+          content: "It's not a bug, it's a feature !",
+          buttons:{agree:"I agree"},
+          close: false, // no close, because we'll update the fancybox
+          options:{
+            showCloseButton: false,
+            enableEscapeButton: true
+          },
+          onAgree: function(){
+            $("#console").append("<p>onAgree</p>");
+            $.fancybox.message.info("Good boy ;)");
+          },
+          onCancel: function(){ // cancel can't be stopped, so need a timeout
+            setTimeout(         // to "wait" the end of the current fancybox (internal busy locks) 
+              function(){
+                $.fancybox.message({
+                  title: false,
+                  buttons: false,
+                  content: $bsod.clone(),
+                  classes: "fancybox_bsod",
+                  options:{
+                    showCloseButton: false
+                  }
+                });
+              },
+              500
+            );
+          }
+        });
+      });
+      
+    });
+	</script>
+</head>
+<body>
+  <div id="toolbar">
+    <div>
+      <button id="confirm">confirm</button>
+      <button id="alert">alert</button>
+      <button id="error">error</button>
+      <button id="info">info</button>
+      <button id="custom">custom</button>
+    </div>
+    <br /> <br /> <br />
+    <div>
+      <button id="buttons">confirm + buttons + action (log)</button>
+    </div>
+  </div>
+  <div id="console">
+    <h1>CONSOLE</h1>
+  </div>
+  
+  <div class="bsod">
+    <span class="title">Windows</span>
+    <p class="content">
+      A fatal exception OE has occured at F0AD:42494C4C<br />
+      the current application will be terminated.
+    </p>
+    <span class="press">Press esc to continue</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+/*
+  BOX
+*/
+.fancybox_message{
+  border: 1px solid gray;
+  text-align: center;
+  color: #262626;
+	background: #f4f4f4;
+	font: normal 12px/18px Verdana, sans-serif;
+}
+.fancybox_message_title{
+  background: url(images/title.gif) repeat-x scroll center top #CCCCCC;
+  border-color: #FFFFFF #FFFFFF #999999;
+  border-style: solid;
+  border-width: 1px;
+  color: #666666;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 21px;
+  margin: 0;
+  padding: 0;
+}
+.fancybox_message_content{
+  margin: 0;
+  padding: 12px 21px;
+}
+.fancybox_message_content_body{
+  padding: 2px 50px;
+}
+.fancybox_message_content_panel{
+  padding: 10px 50px 0px 70px;
+}
+.fancybox_message_content_panel button{
+  display: inline-block;
+  width: 80px;
+  margin-right: 20px;
+}
+/*
+  ICONS
+*/
+.fancybox_message.confirm .fancybox_message_content{
+  background: url(images/confirm.png) no-repeat scroll 16px 16px transparent;
+}
+.fancybox_message.error .fancybox_message_content{
+  background: url(images/error.png) no-repeat scroll 16px 16px transparent;
+}
+.fancybox_message.alert .fancybox_message_content{
+  background: url(images/alert.png) no-repeat scroll 16px 16px transparent;
+}
+.fancybox_message.info .fancybox_message_content{
+  background: url(images/info.png) no-repeat scroll 16px 16px transparent;
+}

@@ -1,0 +1,60 @@
+html, body, div, ul {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+#toolbar{
+  text-align:center;
+  margin-top: 10px;
+}
+#toolbar button{
+  margin-right: 5px;
+}
+
+#console{
+  background-color:#000000;
+  color: #00ff00;
+  width: 500px;
+  height: 300px;
+  margin: 10px auto;
+}
+#console h1{
+  background-color:#00108C;
+  color:#FFFFFF;
+  font-weight:bold;
+  padding:2px; 
+	font-size: 13px;
+}
+#console p{
+  margin: 1px 2px;
+}
+
+.fancybox_message.long_name button{
+  width: 120px;
+}
+.fancybox_message.custom .fancybox_message_content{
+  background: url(images/bug.png) no-repeat scroll 16px 16px transparent;
+}
+.bsod{
+  background-color: #0000AA;
+  color:#FFFFFF;
+  text-align:center;
+  width: 400px;
+  padding: 10px 40px;
+}
+.bsod .title{
+  background-color: #FFFFFF;
+  color:#0000AA;
+}
+.bsod .content{
+  text-align:left;
+}
+.bsod .press{
+  display: inline-block;
+  margin:0 auto;
+}
+.fancybox_bsod .fancybox_message_content,
+.fancybox_bsod .fancybox_message_content_body{
+  padding: 0px;
+}

@@ -8,7 +8,7 @@
 **/
 
 ;(function($, undefined) {
-  var ns = "fancybox_message"
+  var ns = "fancybox_message";
   
   if (!$.fancybox){
     alert("fancybox must be loaded first");
@@ -106,11 +106,11 @@
       if (!managed && typeof opts.onCancel === "function"){
         opts.onCancel();
       } else if (typeof onClosed === "function"){
-        onClose();
+        onClosed();
       }
     }
     $.fancybox(options);
-  }
+  };
   
   $.fancybox.message.error = function(opts){
     $.fancybox.message(opts, {
@@ -119,7 +119,7 @@
       buttons: {ok:true},
       options:{modal:true}
     });
-  }
+  };
   
   $.fancybox.message.info = function(opts){
     $.fancybox.message(opts, {
@@ -128,7 +128,7 @@
       buttons: {ok:true},
       options:{modal:true}
     });
-  }
+  };
   
   $.fancybox.message.alert = function(opts){
     $.fancybox.message(opts, {
@@ -137,7 +137,7 @@
       buttons: {ok:true},
       options:{modal:true}
     });
-  }
+  };
   
   $.fancybox.message.confirm = function(opts){    
     $.fancybox.message(opts, {
@@ -146,6 +146,6 @@
       buttons:{no:true, yes:true},
       options:{modal:true}
     });
-  }
+  };
 
 })(jQuery);

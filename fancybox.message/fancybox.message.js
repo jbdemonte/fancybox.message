@@ -108,7 +108,7 @@
       } else if (typeof onClosed === "function"){
         onClosed();
       }
-    }
+    };
     $.fancybox(options);
   };
   
